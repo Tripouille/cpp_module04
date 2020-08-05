@@ -21,7 +21,7 @@ class SuperPeon : public Peon
 		void				copy(SuperPeon const &other);
 		bool				counterSpell(void) const;
 		
-		mutable u_int	_shieldValue;
+		mutable u_int		_shieldValue;
 };
 
 #endif
