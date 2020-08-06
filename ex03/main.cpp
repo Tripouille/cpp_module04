@@ -1,6 +1,7 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
+#include "MateriaSource.hpp"
 
 int		main(void)
 {
@@ -8,6 +9,7 @@ int		main(void)
 	Character enemy("enemy");
 	Cure * pc = new Cure;
 	moi.equip(pc);
+	moi.use(0, enemy);
 	moi.equip(pc);
 	moi.equip(NULL);
 	moi.equip(new Ice);
@@ -20,8 +22,16 @@ int		main(void)
 	moi.use(0, enemy);
 	moi.use(1, enemy);
 	moi.use(2, enemy);
-	moi.equip(new Cure);
-	moi.equip(new Cure);
+	MateriaSource source;
+	source.learnMateria(pc);
+	source.learnMateria(pc);
+	source.learnMateria(pc);
+	source.learnMateria(pc);
+	source.learnMateria(pc);
+	moi.equip(source.createMateria(""));
+	moi.equip(source.createMateria("cure"));
+	moi.equip(source.createMateria("cure"));
+	moi.use(3, enemy);
 	moi.equip(pc);
 	moi.showInventory();
 	delete pc;

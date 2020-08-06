@@ -77,6 +77,8 @@ Character::showInventory(void) const
 	for (int slot = 0; slot < INVENTORY_SLOT; slot++)
 	{
 		std::cout << _inventory[slot];
+		if (_inventory[slot] != NULL)
+		std::cout << ": XP = " << _inventory[slot]->getXP();
 		if (slot + 1 < INVENTORY_SLOT)
 			std::cout << ", ";
 	}

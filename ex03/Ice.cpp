@@ -35,11 +35,12 @@ Ice::copy(Ice const & other)
 Ice *
 Ice::clone(void) const
 {
-	return (new Ice(*this));
+	return (new Ice());
 }
 
 void
 Ice::use(ICharacter& target)
 {
+	AMateria::use(target);
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

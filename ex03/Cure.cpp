@@ -35,11 +35,12 @@ Cure::copy(Cure const & other)
 Cure *
 Cure::clone(void) const
 {
-	return (new Cure(*this));
+	return (new Cure());
 }
 
 void
 Cure::use(ICharacter& target)
 {
+	AMateria::use(target);
 	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }
