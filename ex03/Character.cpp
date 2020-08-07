@@ -15,6 +15,7 @@ Character::~Character(void)
 
 Character::Character(Character const & other)
 {
+	std::memset(_inventory, 0, sizeof(*_inventory) * INVENTORY_SLOT);
 	Character::copy(other);
 }
 
@@ -32,7 +33,10 @@ Character::copy(Character const & other)
 	this->~Character();
 	_name = other._name;
 	for (int slot = 0; slot < INVENTORY_SLOT; slot++)
-		_inventory[slot] = other._inventory[slot]->clone();
+		if (other._inventory[slot] != NULL)
+			_inventory[slot] = other._inventory[slot]->clone();
+		else
+			_inventory[slot] = NULL;
 }
 
 std::string const &

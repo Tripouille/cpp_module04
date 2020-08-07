@@ -11,6 +11,12 @@ int		main(void)
 	moi.equip(pc);
 	moi.use(0, enemy);
 	moi.equip(pc);
+	std::cout << "Test de la cpy" << std::endl;
+	Character cpy(moi);
+	cpy.showInventory();
+	cpy = enemy;
+	cpy.showInventory();
+	std::cout << "Fin du test de la cpy" << std::endl;
 	moi.equip(NULL);
 	moi.equip(new Ice);
 	moi.equip(new Cure);
