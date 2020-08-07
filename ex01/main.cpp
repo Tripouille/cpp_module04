@@ -19,7 +19,7 @@ int		main(void)
 	moi.attack(enemy);
 	std::cout << moi << *enemy;
 	moi.attack(enemy);
-	std::cout << moi << *enemy;
+	std::cout << moi;
 	std::cout << "test character copie" << std::endl;
 	std::cout << "moi weapon = " << moi.getWeapon() << std::endl;
 	Character bob(moi);
